@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Snack Display App</string>
+    <string name="am_add_snack">Add Snack</string>
+    <string name="am_delete_all">Delete All</string>
+    <string name="am_snack_name_hint">Snack Name</string>
+    <string name="am_snack_price_hint">Price</string>
+    <string name="am_snack_desc_hint">Description</string>
+</resources>
