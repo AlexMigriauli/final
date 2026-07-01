@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         // Setup Toolbar
         setSupportActionBar(amBinding.amToolbar)
 
+        // Random background photo
+        val bgImages = listOf(R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4)
+        amBinding.amBgImage.setImageResource(bgImages.random())
+
         // Setup RecyclerView
         val adapter = SnackAdapter()
         amBinding.amRvSnacks.adapter = adapter

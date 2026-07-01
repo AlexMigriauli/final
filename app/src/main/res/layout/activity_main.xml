@@ -7,6 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Background photo -->
+    <ImageView
+        android:id="@+id/amBgImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img1"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Dark overlay so text/list stays readable on top of the photo -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#99000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/amToolbar"
         android:layout_width="0dp"
@@ -22,11 +45,53 @@
         android:id="@+id/amRvSnacks"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/amToolbar"
         tools:listitem="@layout/am_snack_item" />
+
+    <LinearLayout
+        android:id="@+id/amEmptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/amToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:tint="#B0B0B0"
+            android:alpha="0.6"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/am_no_snacks_yet"
+            android:textSize="16sp"
+            android:textColor="#F0F0F0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/am_add_snack_hint"
+            android:textSize="13sp"
+            android:textColor="#D0D0D0" />
+
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/amFabAddSnack"
@@ -35,6 +100,7 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/am_add_snack"
         android:src="@android:drawable/ic_input_add"
+        app:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@android:color/white" />

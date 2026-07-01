@@ -5,4 +5,6 @@
     <string name="am_snack_name_hint">Snack Name</string>
     <string name="am_snack_price_hint">Price</string>
     <string name="am_snack_desc_hint">Description</string>
+    <string name="am_no_snacks_yet">No snacks yet</string>
+    <string name="am_add_snack_hint">Tap + to add your first one</string>
 </resources>
